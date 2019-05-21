@@ -1,0 +1,19 @@
+.article-header {
+    margin-bottom: 20px;
+    text-indent: -5px;
+}
+.article-header .article-title {
+    color: #00bebe!important;
+}
+.article-entry h3, .article-entry h4 {
+    background: unset;
+}
+.article-more-a {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+
+h4 {
+    text-transform: unset!important;
+}
