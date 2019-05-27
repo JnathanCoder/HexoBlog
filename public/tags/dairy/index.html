@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://JnathanCoder.github.io">
-  <title>this + bind + call + apply | Jnathan Blog</title>
+  <title>Tag: dairy | Jnathan Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this的指向 this的指向总结起来就是this永远指向最后调用它的那个对象">
-<meta name="keywords" content="this,作用域">
-<meta property="og:type" content="article">
-<meta property="og:title" content="this + bind + call + apply">
-<meta property="og:url" content="https://JnathanCoder.github.io/2019/05/21/this/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jnathan Blog">
+<meta property="og:url" content="https://JnathanCoder.github.io/tags/dairy/index.html">
 <meta property="og:site_name" content="Jnathan Blog">
-<meta property="og:description" content="this的指向 this的指向总结起来就是this永远指向最后调用它的那个对象">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T05:46:45.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this + bind + call + apply">
-<meta name="twitter:description" content="this的指向 this的指向总结起来就是this永远指向最后调用它的那个对象">
+<meta name="twitter:title" content="Jnathan Blog">
   
     <link rel="alternative" href="/atom.xml" title="Jnathan Blog" type="application/atom+xml">
   
@@ -145,183 +140,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-this" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      this + bind + call + apply
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/05/22/multiple-diary/" class="archive-article-date">
+  	<time datetime="2019-05-22T09:43:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/05/22/multiple-diary/">【一】日志，内容会持续补充...</a>
     </h1>
   
 
-        
-        <a href="/2019/05/21/this/" class="archive-article-date">
-  	<time datetime="2019-05-21T07:05:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><blockquote>
-<p><code>this</code>的指向总结起来就是<code>this永远指向最后调用它的那个对象</code></p>
-</blockquote>
-<a id="more"></a>
-<p>例1：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">'cherry'</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br><span class="line"><span class="comment">// window</span></span><br><span class="line"><span class="comment">// global</span></span><br></pre></td></tr></table></figure>
-<p>调用 <code>test</code> 方法的地方是 <code>test()</code> ，前面没有调用的对象即为 <code>window</code> （严格模式下为 <code>undefined</code> ），相当于 <code>window.test()</code> 。</p>
-<p>例2：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'cherry'</span>,</span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn()  <span class="comment">// cherry</span></span><br><span class="line"><span class="built_in">window</span>.obj.fn()  <span class="comment">// cherry</span></span><br></pre></td></tr></table></figure>
-<p><code>obj.fn()</code> 取用的是 <code>obj</code> 对象 里面的 <code>name</code> 值， <code>window.obj.fn()</code> 里面，最后调用的是 <code>obj</code> 对象，所以也是 <code>cherry</code> 。<br>补充：假如将 <code>obj</code> 对象中 <code>name</code> 属性的定义注释掉，那么 <code>obj.fn()</code> 将会打印出 <code>undefined</code> ，因为只会看最近的调用 <code>obj</code> 对象 ，当没有定义时，不会继续向上一个对象 <code>window</code> 寻找 <code>name</code> 属性。</p>
-<p>例3：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'cherry'</span>,</span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = obj.fn()</span><br><span class="line">temp()  <span class="comment">// global</span></span><br></pre></td></tr></table></figure>
-<p>再来看一遍：<code>this</code> 永远指向 <code>最后调用</code> 它的那个对象。 <code>obj.fn()</code> 赋值给 <code>temp</code> 时，并没有进行赋值！最后 temp() 调用的时候是 <code>window.temp()</code> ，所以打印 <code>global</code> 。</p>
-<p>例4：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">'cherry'</span></span><br><span class="line">    innerFn()</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerFn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn()  <span class="comment">// global</span></span><br></pre></td></tr></table></figure>
-<p>例5：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Func</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'cherry'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> Func()</span><br><span class="line"><span class="built_in">console</span>.log(fn.name)  <span class="comment">// cherry</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// =================================</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Func2</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'cherry'</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">name</span>: <span class="string">'apple'</span>&#125;  <span class="comment">// 返回一个对象 如果name改为name2，fn2.name为undefined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Func3</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'cherry'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>  <span class="comment">// 返回true，非对象（false, 124, 'abc'都可）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="keyword">new</span> Func2()</span><br><span class="line"><span class="built_in">console</span>.log(fn2.name)  <span class="comment">// apple</span></span><br><span class="line"><span class="keyword">var</span> fn3 = <span class="keyword">new</span> Func3()</span><br><span class="line"><span class="built_in">console</span>.log(fn3.name)  <span class="comment">// cherry</span></span><br></pre></td></tr></table></figure>
-<p>当我们通过 <code>new</code> 关键字构造一个实例对象的过程中，构造函数中的 this 一般情况下指向我们构造出来的实例化对象，因此在构造过程中 <code>this.name = &#39;cherry&#39;</code> 这句代码就相当于给实例对象 <code>fn</code> 创建了一个 <code>name</code> 属性并赋值 <code>cherry</code> 。<br>特别的，当构造函数中的 <code>this</code> 遇到 <code>return</code> 的情况。当构造函数中返回值是一个对象时，<code>this</code> 指向的就是返回的那个对象；如果返回值不是对象时，<code>this</code> 指向的就是构造函数（这里是 Func3 ）。</p>
-<h3 id="改变this的指向"><a href="#改变this的指向" class="headerlink" title="改变this的指向"></a>改变this的指向</h3><p>例6：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'cherry'</span>,</span><br><span class="line">    fn1: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;,</span><br><span class="line">    fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn1()</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn2()  <span class="comment">// this.fn1 is not a function</span></span><br></pre></td></tr></table></figure>
-<p><code>setTimeout()</code> 即为 <code>window.setTimeout()</code> ，最后调用的对象是 <code>window</code>，而 <code>window</code> 中并没有方法 <code>fn1()</code> ，故而报错。</p>
-<p><strong>我们通常使用以下几种方法改变this的指向问题：</strong></p>
-<ul>
-<li>var _this = this</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line">fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        _this.fn1()  <span class="comment">// cherry</span></span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>箭头函数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line">fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout( <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.fn1()  <span class="comment">// cherry</span></span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>bind</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line">fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fn1()  <span class="comment">// cherry</span></span><br><span class="line">    &#125;. bind(obj)(), <span class="number">1000</span>)  <span class="comment">// 这里的obj也可以换成this this指向obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>call</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line">fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fn1()  <span class="comment">// cherry</span></span><br><span class="line">    &#125;.call(obj), <span class="number">1000</span>)  <span class="comment">// 这里的obj也可以换成this this指向obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>apply</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line">fn2: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fn1()  <span class="comment">// cherry</span></span><br><span class="line">    &#125;.apply(obj), <span class="number">1000</span>)  <span class="comment">// 这里的obj也可以换成this this指向obj</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<h3 id="bind介绍"><a href="#bind介绍" class="headerlink" title="bind介绍"></a>bind介绍</h3><blockquote>
-<p><code>bind()</code> 方法创建一个 新的函数， 当被调用时，将其 <code>this</code> 关键字设置为提供的值。在调用新函数时，在任何提供之前提供一个给定的参数序列。</p>
-</blockquote>
-<p>例7：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'乘积： '</span> + a * b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.func.bind(obj, <span class="number">2</span>, <span class="number">8</span>)  <span class="comment">// f (a, b) &#123;</span></span><br><span class="line">                        <span class="comment">//     console.log('乘积： ' + a * b)</span></span><br><span class="line">                        <span class="comment">// &#125;</span></span><br><span class="line">obj.func.bind(obj, <span class="number">2</span>, <span class="number">8</span>)()  <span class="comment">// 乘积： 16</span></span><br></pre></td></tr></table></figure>
-<p>因为 bind 只会重新赋予 this，并不会自动执行，需要手动执行，固有第二个的结果。</p>
-<h3 id="call介绍"><a href="#call介绍" class="headerlink" title="call介绍"></a>call介绍</h3><blockquote>
-<p>functionObj.call(thisArg[, args1, args2, args3, …])</p>
-<blockquote>
-<p><code>thisArg</code> -&gt; 函数在运行时指定的 <code>this</code> 。当为 <code>null</code> 或者 <code>undefined</code> 时，自动指向 <code>window</code> 。当为<code>string</code> 、<code>number</code> 、<code>boolean</code> 类型的时候，<code>this</code> 指向各自的包装对象。</p>
-</blockquote>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this: '</span> + <span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test.call(<span class="literal">null</span>)  <span class="comment">// window</span></span><br><span class="line">test.call(<span class="literal">undefined</span>)  <span class="comment">// window</span></span><br><span class="line">test.call(<span class="string">'abcd'</span>)  <span class="comment">// String</span></span><br><span class="line">test.call(<span class="number">128</span>)  <span class="comment">// Number</span></span><br><span class="line">test.call(<span class="literal">false</span>)  <span class="comment">// Boolean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// apply() 的结果与 call() 一致</span></span><br><span class="line">test.apply(<span class="literal">null</span>)  <span class="comment">// window</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<p>例8：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'hello'</span>,</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'乘积： '</span> + a * b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.func.call(obj, <span class="number">2</span>, <span class="number">5</span>)  <span class="comment">// 乘积： 10</span></span><br></pre></td></tr></table></figure>
-<h3 id="apply介绍"><a href="#apply介绍" class="headerlink" title="apply介绍"></a>apply介绍</h3><blockquote>
-<p>functionObj.apply(thisArg[, argsArr])</p>
-<blockquote>
-<p><code>apply</code> 的语法和 <code>call</code> 的语法类似，区别在于 <code>apply</code> 的参数列表是以 <code>数组</code> 或者 <code>类数组</code> 形式传入。</p>
-</blockquote>
-</blockquote>
-<p>例9：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'hello'</span>,</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'乘积： '</span> + a * b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.func.apply(obj, [<span class="number">2</span>, <span class="number">6</span>])  <span class="comment">// 乘积： 12</span></span><br></pre></td></tr></table></figure>
-<h3 id="call、apply常见用法"><a href="#call、apply常见用法" class="headerlink" title="call、apply常见用法"></a>call、apply常见用法</h3><ul>
-<li>将类数组 <code>ArrayLike</code> 转换成数组 <code>Array</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arraylike = &#123;<span class="string">'1'</span>: <span class="string">'hello'</span>, <span class="string">'2'</span>: <span class="string">'world'</span>, <span class="string">'3'</span>: <span class="string">'balabala'</span>, <span class="attr">length</span>: <span class="number">4</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ArrTransfer</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return [].slice.call(arguments)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">    <span class="comment">// return [].splice.call(arguments, 0)</span></span><br><span class="line">    <span class="comment">// return Array.prototype.splice.call(arguments, 0)</span></span><br><span class="line">    <span class="comment">// return Array.from(arguments)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> list = ArrTransfer(arrayLike)  <span class="comment">// [&#123;'1': 'hello', '2': 'world', '3': 'balabala', length: 3&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(arrayLike).forEach( <span class="function">(<span class="params">elem, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(elem, index)</span><br><span class="line">    <span class="comment">// hello 1</span></span><br><span class="line">    <span class="comment">// world 2</span></span><br><span class="line">    <span class="comment">// balabala 3</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>求最大最小值</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">21</span>, <span class="number">2</span>, <span class="number">35</span>, <span class="number">9</span>, <span class="number">23</span>, <span class="number">16</span>, <span class="number">29</span>]</span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, arr)  <span class="comment">// 35</span></span><br><span class="line"><span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, arr)  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<h3 id="Useful-Link"><a href="#Useful-Link" class="headerlink" title="Useful Link"></a>Useful Link</h3><ul>
-<li><a href="https://juejin.im/post/59bfe84351882531b730bac2" target="_blank" rel="noopener">全文参考自掘金文章</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">作用域</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">dairy</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/05/22/void-0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用 void 0 代替 undefined
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/05/21/wxwork-link-unRirect/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">企业微信中超链接地址跳转</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -344,9 +216,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

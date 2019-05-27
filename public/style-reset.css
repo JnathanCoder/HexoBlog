@@ -6,14 +6,37 @@
     color: #00bebe!important;
 }
 .article-entry h3, .article-entry h4 {
+    margin-top: 30px!important;
     background: unset;
 }
+.article-entry h3 + p, .article-entry h4 + p {
+    margin-top: 0!important;
+}
+.article-inner p {
+    margin-top: 30px!important;
+    margin-bottom: 0!important;
+}
+
+/* More */
 .article-more-a {
     display: inline-block;
     margin-top: 30px;
 }
 
+/* 引用内容 */
+blockquote {
+    margin: 1.473em 0!important;
+}
+.article-inner blockquote p {
+  margin-top: 0 !important;
+}
 
+/* 禁止默认的大写转换 */
 h4 {
     text-transform: unset!important;
+}
+
+/* 目录结构透明度 */
+.toc-container {
+    opacity: 1!important;
 }
