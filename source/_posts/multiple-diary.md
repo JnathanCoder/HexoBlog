@@ -1,5 +1,5 @@
 ---
-title: 【一】日志，内容会持续补充...
+title: 日志内容【一】
 date: 2019-05-22 17:43:43
 toc: true
 tags: [dairy]

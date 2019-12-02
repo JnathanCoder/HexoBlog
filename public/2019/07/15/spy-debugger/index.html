@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://JnathanCoder.github.io">
-  <title>Archives: 2019 | Jnathan Blog</title>
+  <title>移动端真机调试 spy-debugger | Jnathan Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jnathan Blog">
-<meta property="og:url" content="https://JnathanCoder.github.io/archives/2019/index.html">
+  <meta name="description" content="关于spy-debugger一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端webview（如：微信，HybridApp等）。支持HTTP/HTTPS，无需USB连接设备。 特性1、页面调试＋抓包2、操作简单，无需USB连接设备3、支持HTTPS。4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。5、自动忽略原生App发起的ht">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端真机调试 spy-debugger">
+<meta property="og:url" content="https://JnathanCoder.github.io/2019/07/15/spy-debugger/index.html">
 <meta property="og:site_name" content="Jnathan Blog">
+<meta property="og:description" content="关于spy-debugger一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端webview（如：微信，HybridApp等）。支持HTTP/HTTPS，无需USB连接设备。 特性1、页面调试＋抓包2、操作简单，无需USB连接设备3、支持HTTPS。4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。5、自动忽略原生App发起的ht">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://jnathancoder.github.io/assets/img/spy-debugger.jpg">
+<meta property="og:image" content="https://jnathancoder.github.io/assets/img/mobile-effect-snap.jpeg">
+<meta property="og:updated_time" content="2019-07-15T09:19:46.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jnathan Blog">
+<meta name="twitter:title" content="移动端真机调试 spy-debugger">
+<meta name="twitter:description" content="关于spy-debugger一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端webview（如：微信，HybridApp等）。支持HTTP/HTTPS，无需USB连接设备。 特性1、页面调试＋抓包2、操作简单，无需USB连接设备3、支持HTTPS。4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。5、自动忽略原生App发起的ht">
+<meta name="twitter:image" content="https://jnathancoder.github.io/assets/img/spy-debugger.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Jnathan Blog" type="application/atom+xml">
   
@@ -140,363 +147,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-spy-debugger" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      移动端真机调试 spy-debugger
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/spy-debugger/" class="archive-article-date">
+
+        
+        <a href="/2019/07/15/spy-debugger/" class="archive-article-date">
   	<time datetime="2019-07-15T08:53:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/spy-debugger/">移动端真机调试 spy-debugger</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="关于spy-debugger"><a href="#关于spy-debugger" class="headerlink" title="关于spy-debugger"></a>关于spy-debugger</h3><p>一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端<code>webview</code>（如：微信，HybridApp等）。支持H<code>TTP/HTTPS</code>，无需USB连接设备。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1、页面调试＋抓包<br>2、操作简单，无需USB连接设备<br>3、支持HTTPS。<br>4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。<br>5、自动忽略原生App发起的https请求，只拦截webview发起的https请求。对使用了SSL pinning技术的原生App不造成任何影响。<br>6、可以配合其它代理工具一起使用(默认使用AnyProxy) (设置外部代理)</p>
+<a id="more"></a>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[sudo] npm install spy-<span class="keyword">debugger</span> -g</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+<h3 id="三分钟上手"><a href="#三分钟上手" class="headerlink" title="三分钟上手"></a>三分钟上手</h3><p>第一步：手机和PC保持在同一网络下（比如同时连到一个Wi-Fi下）<br>第二步：命令行输入spy-debugger，按命令行提示用浏览器打开相应地址。<br>第三步：设置手机的HTTP代理，代理IP地址设置为PC的IP地址，端口为spy-debugger的启动端口(默认端口：9888)。</p>
+<p>Android设置代理步骤：设置 - WLAN - 长按选中网络 - 修改网络 - 高级 - 代理设置 - 手动<br>iOS设置代理步骤：设置 - 无线局域网 - 选中网络 - HTTP代理手动</p>
+<p>第五步：用手机浏览器访问你要调试的页面即可。</p>
+<h3 id="效果截图"><a href="#效果截图" class="headerlink" title="效果截图"></a>效果截图</h3><p><img src="/assets/img/spy-debugger.jpg" alt="PC端调试界面"><br><img src="/assets/img/mobile-effect-snap.jpeg" alt="移动端界面"></p>
+<h3 id="自定义选项"><a href="#自定义选项" class="headerlink" title="自定义选项"></a>自定义选项</h3><h4 id="端口-默认端口9888"><a href="#端口-默认端口9888" class="headerlink" title="端口(默认端口9888)"></a>端口(默认端口9888)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -p <span class="number">9999</span></span><br></pre></td></tr></table></figure>
+<h4 id="设置外部代理（默认使用AnyProxy）"><a href="#设置外部代理（默认使用AnyProxy）" class="headerlink" title="设置外部代理（默认使用AnyProxy）"></a>设置外部代理（默认使用AnyProxy）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -e http:<span class="comment">//127.0.0.1:8888</span></span><br></pre></td></tr></table></figure>
+<h4 id="设置页面内容为可编辑模式（默认false）"><a href="#设置页面内容为可编辑模式（默认false）" class="headerlink" title="设置页面内容为可编辑模式（默认false）"></a>设置页面内容为可编辑模式（默认false）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -w <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>该功能使页面内容修改更加直观方便。内部实现原理：在需要调试的页面内注入代码：document.body.contentEditable=true。暂不支持使用了iscroll框架的页面。</p>
+<h4 id="是否允许weinre监控iframe加载的页面-默认false"><a href="#是否允许weinre监控iframe加载的页面-默认false" class="headerlink" title="是否允许weinre监控iframe加载的页面(默认false)"></a>是否允许weinre监控iframe加载的页面(默认false)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -i <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="是否只拦截浏览器发起的https请求（默认true）"><a href="#是否只拦截浏览器发起的https请求（默认true）" class="headerlink" title="是否只拦截浏览器发起的https请求（默认true）"></a>是否只拦截浏览器发起的https请求（默认true）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -b <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h4 id="是否允许HTTP缓存-默认false"><a href="#是否允许HTTP缓存-默认false" class="headerlink" title="是否允许HTTP缓存(默认false)"></a>是否允许HTTP缓存(默认false)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -c <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/06/brief-info/" class="archive-article-date">
-  	<time datetime="2019-06-06T08:48:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/06/brief-info/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">知识点</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/06/brief-info/">知识点</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/26/multiple-diary2/" class="archive-article-date">
-  	<time datetime="2019-05-26T06:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/26/multiple-diary2/">日志内容【二】</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/webpack-study/" class="archive-article-date">
-  	<time datetime="2019-05-23T07:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/23/webpack-study/">webpack-study</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/multiple-diary/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:43:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/multiple-diary/">日志内容【一】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">dairy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/forEach-interrupt/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:28:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/forEach-interrupt/">forEach遍历中断</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/void-0/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:02:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/22/void-0/">使用 void 0 代替 undefined</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/21/this/" class="archive-article-date">
-  	<time datetime="2019-05-21T07:05:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/21/this/">this + bind + call + apply</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">作用域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/21/wxwork-link-unRirect/" class="archive-article-date">
-  	<time datetime="2019-05-21T03:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/21/wxwork-link-unRirect/">企业微信中超链接地址跳转</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">企微</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">超链接</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/01/text-overflow-ellipsis/" class="archive-article-date">
-  	<time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/text-overflow-ellipsis/">CSS文本超出容器宽度使用省略号代替（不考虑js方法）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ellipsis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">换行</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">省略号</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -519,8 +261,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
