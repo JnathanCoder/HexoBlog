@@ -17,7 +17,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://jnathancoder.github.io/assets/img/spy-debugger.jpg">
 <meta property="og:image" content="https://jnathancoder.github.io/assets/img/mobile-effect-snap.jpeg">
-<meta property="og:updated_time" content="2019-07-15T09:19:46.548Z">
+<meta property="og:updated_time" content="2020-01-02T07:38:21.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端真机调试 spy-debugger">
 <meta name="twitter:description" content="关于spy-debugger一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端webview（如：微信，HybridApp等）。支持HTTP/HTTPS，无需USB连接设备。 特性1、页面调试＋抓包2、操作简单，无需USB连接设备3、支持HTTPS。4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。5、自动忽略原生App发起的ht">
@@ -56,7 +56,7 @@
 		  <h1 class="header-author"><a href="/">Jnathan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">生人蛤蟆皮 熟人笑嘻嘻</p>
+		<p class="header-subtitle">重度懒癌患者</p>
 		
 
 		<nav class="header-menu">
@@ -110,7 +110,7 @@
 			  <h1 class="header-author js-header-author">Jnathan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>生人蛤蟆皮 熟人笑嘻嘻<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重度懒癌患者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -170,9 +170,11 @@
         <h3 id="关于spy-debugger"><a href="#关于spy-debugger" class="headerlink" title="关于spy-debugger"></a>关于spy-debugger</h3><p>一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端<code>webview</code>（如：微信，HybridApp等）。支持H<code>TTP/HTTPS</code>，无需USB连接设备。</p>
 <h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1、页面调试＋抓包<br>2、操作简单，无需USB连接设备<br>3、支持HTTPS。<br>4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。<br>5、自动忽略原生App发起的https请求，只拦截webview发起的https请求。对使用了SSL pinning技术的原生App不造成任何影响。<br>6、可以配合其它代理工具一起使用(默认使用AnyProxy) (设置外部代理)</p>
 <a id="more"></a>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[sudo] npm install spy-<span class="keyword">debugger</span> -g</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[sudo] npm install spy-debugger -g</span><br></pre></td></tr></table></figure>
 <h3 id="三分钟上手"><a href="#三分钟上手" class="headerlink" title="三分钟上手"></a>三分钟上手</h3><p>第一步：手机和PC保持在同一网络下（比如同时连到一个Wi-Fi下）<br>第二步：命令行输入spy-debugger，按命令行提示用浏览器打开相应地址。<br>第三步：设置手机的HTTP代理，代理IP地址设置为PC的IP地址，端口为spy-debugger的启动端口(默认端口：9888)。</p>
 <p>Android设置代理步骤：设置 - WLAN - 长按选中网络 - 修改网络 - 高级 - 代理设置 - 手动<br>iOS设置代理步骤：设置 - 无线局域网 - 选中网络 - HTTP代理手动</p>
+<p>第四步：手机安装证书。</p>
+<p><code>spy-debugger initCA</code> 会将证书放置到系统根目录node-mitmproxy文件夹。<br>Mac    如：/users/yourName/node-mitmproxy<br>Windows 如：C/users/yourName/node-mitmproxy<br>将文件夹下的node-mitmproxy.ca.crt到手机上安装</p>
 <p>第五步：用手机浏览器访问你要调试的页面即可。</p>
 <h3 id="效果截图"><a href="#效果截图" class="headerlink" title="效果截图"></a>效果截图</h3><p><img src="/assets/img/spy-debugger.jpg" alt="PC端调试界面"><br><img src="/assets/img/mobile-effect-snap.jpeg" alt="移动端界面"></p>
 <h3 id="自定义选项"><a href="#自定义选项" class="headerlink" title="自定义选项"></a>自定义选项</h3><h4 id="端口-默认端口9888"><a href="#端口-默认端口9888" class="headerlink" title="端口(默认端口9888)"></a>端口(默认端口9888)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-<span class="keyword">debugger</span> -p <span class="number">9999</span></span><br></pre></td></tr></table></figure>
@@ -202,6 +204,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/04/19/data-type-transfer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据类型转换
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/06/brief-info/" id="article-nav-older" class="article-nav-link-wrap">
@@ -239,6 +250,27 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="/assets/css/gitment.css">
+<!-- <script src="https://jjeejj.github.io/js/gitment.js"></script> -->
+<!-- <script src="/assets/css/gitment.js"></script> -->
+<!-- <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<script>
+    var gitment = new Gitment({
+        // id: "https://JnathanCoder.github.io/2019/07/15/spy-debugger/", // 有长度50的限制。。。
+        id: "移动端真机调试 spy-debugger",
+        owner: 'JnathanCoder',
+        repo: 'JnathanCoder.github.io',
+        oauth: {
+            client_id: '97810445ba8d89806387',
+            client_secret: 'be160a535ac2a0e0342d6fd3bcff99fce6d88d25',
+        }
+    })
+    gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -248,7 +280,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Jnathan
+    		&copy; 2020 Jnathan
     	</div>
       	<div class="footer-right">
       		<!-- Powered By <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> -->
@@ -327,6 +359,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lazy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ellipsis</a>
               </li>
              
@@ -339,10 +391,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">this</a>
               </li>
              
@@ -351,11 +399,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web-worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企微</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">超链接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">==</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">===</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">操作符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,7 +486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;From Jnathan</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;共勉 祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;Jnathan</div>
   	  	
     	</section>
     

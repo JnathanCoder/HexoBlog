@@ -32,13 +32,15 @@ tags: [ellipsis, 换行, 省略号]
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;  // 控制显示的行数
-    -webkit-box-orient: vertical
+    -webkit-box-orient: vertical;
 }
 ```
 
 在`webkit`浏览器中的表现：![单行省略](/assets/img/webkit-single.jpg) ![多行省略](/assets/img/webkit-multi.jpg)
 
 ### 方法二：利用伪类+`float`（适用于大部分浏览器）
+
+原理讲解参考[这里](https://juejin.im/post/5dc15b35f265da4d432a3d10)
 
 ```html
 <div class="wrap">
@@ -48,39 +50,39 @@ tags: [ellipsis, 换行, 省略号]
 
 ```html
 .wrap {
-    width: 333px;
-    height: 60px;
+    background: #099;
+    max-height: 40px;
     line-height: 20px;
     overflow: hidden;
-    border: 1px solid #00bebe;
 }
 .wrap:before {
     float: left;
     content: '';
-    width: 5px;
-    height: 100%;
+    width: 20px;
+    height: 40px;
+}
+
+.wrap .text {
+    float: right;
+    width: 100%;
+    margin-left: -20px;
+    word-break: break-all;
 }
 .wrap:after {
     float: right;
     content: '...';
     width: 20px;
-    margin-left: -20px;
     height: 20px;
-    line-height: 20px;
-    margin-right: 5px;
-    background: #fff;
+    <!-- 下方三行代码 调整省略号位置 -->
+    <!-- 未超出时，省略号在wrap外面，被隐藏 -->
     position: relative;
-    top: -20px;
     left: 100%;
-}
-.wrap .text {
-    float: right;
-    width: 100%;
-    margin-left: -5px;
-    word-break: break-all;
+    transform: translate(-100%, -100%);
 }
 ```
 
 在`非webkit`内核浏览器中的表现：![非webkit浏览器多行省略](/assets/img/unwebkit-multi.jpg)
 
-可以看到效果还是不那么尽人意，可以在此基础上再根据实际情况修改相应代码，比如`...`用渐变色代替现在的白色，会显得平滑。另外，也可以搭配js进一步处理，可以参考[这里](https://blog.csdn.net/lhban108/article/details/82757564)。
+可以看到效果还是不那么尽人意，可以在此基础上再根据实际情况修改相应代码，比如`...`用渐变色代替现在的白色，会显得平滑。另外，也可以搭配js进一步处理，可以参考[这里](https://blog.csdn.net/lhban108/article/details/82757564)。 也可使用封装好的 [vue组件](https://github.com/xm2by/multiline-ellipsis) 。
+
+更详细的文章参考[这里](https://juejin.im/post/5dc15b35f265da4d432a3d10)。

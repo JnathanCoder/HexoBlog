@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">Jnathan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">生人蛤蟆皮 熟人笑嘻嘻</p>
+		<p class="header-subtitle">重度懒癌患者</p>
 		
 
 		<nav class="header-menu">
@@ -103,7 +103,7 @@
 			  <h1 class="header-author js-header-author">Jnathan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>生人蛤蟆皮 熟人笑嘻嘻<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重度懒癌患者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -141,6 +141,327 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-image-lazyload" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/13/image-lazyload/">Vue自定义指令 image-lazyLoad</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/13/image-lazyload/" class="archive-article-date">
+  	<time datetime="2020-08-13T09:37:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要使用 <code>IntersectionObserver</code> 的特性实现，其还能实现譬如 <code>sticky</code> 、<code>上拉加载</code> 等功能。<br>这里只记录实现图片懒加载(图片开始出现在视口区域或者即将出现在视口区域，才开始请求图片资源，进行渲染)的自定义指令的实现代码。</p>
+        
+          <a class="article-more-a" href="/2020/08/13/image-lazyload/#more">More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义指令</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">lazy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web-worker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/13/web-worker/">Web Worker 简介</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/13/web-worker/" class="archive-article-date">
+  	<time datetime="2020-08-13T08:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>JavaScript 语言采用的是单线程模型，也就是说，所有任务只能在一个线程上完成，一次只能做一件事。前面的任务没做完，后面的任务只能等着。随着电脑计算能力的增强，尤其是多核 CPU 的出现，单线程带来很大的不便，无法充分发挥计算机的计算能力。<br>Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</p>
+</blockquote>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> worker = <span class="keyword">new</span> Worker(jsUrl[, &#123; <span class="attr">name</span>: <span class="string">'yourWorkerName'</span> &#125;])</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/08/13/web-worker/#more">More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">worker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web-worker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-abstract-and-strict-equality" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/29/abstract-and-strict-equality/">== 和 ===</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/29/abstract-and-strict-equality/" class="archive-article-date">
+  	<time datetime="2020-04-29T03:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先来几个例子，带着问题一起思考：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([<span class="number">10</span>] == <span class="number">10</span>);                <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'10'</span> == <span class="number">10</span>);                <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == <span class="number">0</span>);                   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> == <span class="number">1</span>);                 <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == <span class="literal">false</span>);               <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(![] == <span class="literal">false</span>);              <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == ![]);                 <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">''</span> == <span class="number">0</span>);                   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">''</span> == <span class="literal">false</span>);               <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">false</span>);             <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">true</span>);              <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(!<span class="literal">null</span> == <span class="literal">true</span>);             <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">undefined</span>);         <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2020/04/29/abstract-and-strict-equality/#more">More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">==</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">===</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">操作符</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-data-type-transfer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/19/data-type-transfer/">数据类型转换</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/19/data-type-transfer/" class="archive-article-date">
+  	<time datetime="2020-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基本数据类型有 <code>Number</code>、 <code>String</code>、 <code>Boolean</code>、 <code>Null</code>、 <code>Undefined</code>、<code>Object</code>，ES6新增了<code>Symbol</code> 类型。</p>
+<h3 id="1-原始值转布尔"><a href="#1-原始值转布尔" class="headerlink" title="1. 原始值转布尔"></a>1. 原始值转布尔</h3><p>在Javascript中。只有6种值可以被转换成false，其余均为true：<br><code>false</code>、<code>undefined</code>、<code>null</code>、<code>NaN</code>、<code>0</code>、<code>&#39;&#39;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">false</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">0</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">''</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="comment">// Boolean不传任何参数时 返回false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>())  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/04/19/data-type-transfer/#more">More >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">类型转换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-spy-debugger" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -204,689 +525,10 @@
 
 
   
-    <article id="post-brief-info" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/06/brief-info/">知识点</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/06/brief-info/" class="archive-article-date">
-  	<time datetime="2019-06-06T08:48:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-一些js插件为什么以-开头"><a href="#1-一些js插件为什么以-开头" class="headerlink" title="1. 一些js插件为什么以;开头"></a>1. 一些js插件为什么以<code>;</code>开头</h3><p>因为js代码允许在结束的时候不添加<code>;</code>, 所以两个js文件在合并拼接的的时候可能出错。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="comment">// 末尾没有添加;符号</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'test'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p>以上两个文件进行合并压缩的时候就可能变为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'test'</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这样会报错： TypeError: 'test' is not a function</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-使用闭包定义私有属性"><a href="#2-使用闭包定义私有属性" class="headerlink" title="2. 使用闭包定义私有属性"></a>2. 使用闭包定义私有属性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Product</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        name = value;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Product();</span><br><span class="line">p.setName(<span class="string">"test"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.name); <span class="comment">// 输出undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(p.getName()); <span class="comment">// 输出test</span></span><br></pre></td></tr></table></figure>
-<p>代码中，对象p的的<code>name</code>属性为<code>私有属性</code>，使用<code>p.name</code>不能直接访问。</p>
-<h3 id="3-枚举属性"><a href="#3-枚举属性" class="headerlink" title="3. 枚举属性"></a>3. 枚举属性</h3><ul>
-<li>可枚举性<br>在js中，<code>基本数据类型</code>的原型属性是不可枚举的，比如<code>Object</code>、<code>Array</code>、<code>Number</code>等。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打印结果为空 Number内置属性是不可枚举的</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>()</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> num) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i, num[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>propertyIsEnumerable</li>
-</ul>
-<blockquote>
-<p>Object.propertyIsEnumerable(prop)<br>prop 需要测试的属性名<br>返回值 用来表示指定的属性名是否可枚举的Boolean</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">obj.test = <span class="string">'Jnathan'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">23</span>, <span class="number">67</span>]</span><br><span class="line">obj.propertyIsEnumerable(<span class="string">'test'</span>)  <span class="comment">// true</span></span><br><span class="line">arr.propertyIsEnumerable(<span class="number">0</span>)  <span class="comment">// true</span></span><br><span class="line">arr.propertyIsEnumerable(<span class="number">1</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>hasOwnProperty</li>
-</ul>
-<blockquote>
-<p>Object.hasOwnProperty(prop)<br>prop 需要测试的属性名<br>返回值 用来表示指定的属性名是否在对象中的Boolean</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">obj.x = <span class="string">'Jnathan'</span></span><br><span class="line">obj.y = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">obj.hasOwnProperty(<span class="string">'x'</span>)  <span class="comment">// true</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">'y'</span>)  <span class="comment">// true 方法也属于属性</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">'z'</span>)  <span class="comment">// false 属性不存在</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">'toString'</span>)  <span class="comment">// false toString是继承的Object中的属性，obj自身属性中不包含</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Jnathan'</span></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,</span><br><span class="line">    job: 'student',</span><br><span class="line">&#125;</span><br><span class="line">var Jnathan = new Person()</span><br><span class="line">Object.defineProperty(Jnathan, "gender", &#123;</span><br><span class="line">    value: <span class="string">'female'</span>,</span><br><span class="line">    enumerable: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>以上， 用<code>defineProperty</code>为<code>对象Jnathan</code>定义了一个名为<code>gender</code>的<code>不可枚举属性</code></p>
-<ul>
-<li>枚举 for…in</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> Jnathan) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Jnathan.'</span> + item + <span class="string">' = '</span> + Jnathan[item])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Jnathan.name = Jnathan</span></span><br><span class="line"><span class="comment">// Jnathan.constructor = function Person() &#123;</span></span><br><span class="line"><span class="comment">//     this.name = 'Jnathan'</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// Jnathan.job = student</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>枚举 Object.keys()</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(Jnathan)</span><br><span class="line"><span class="comment">// ["name"]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>枚举 JSON.stringify()</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(Jnathan)</span><br><span class="line"><span class="comment">// "&#123;"name":"Jnathan"&#125;"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>根据现象有以下总结<br><!-- > for...in 能返回对象本身的可枚举和不可枚举属性、通过prototype或者definePrototype生成的属性   有问题。。。。 只能可枚举的--><br>Object.keys() 只能返回对象本身具有的可枚举属性<br>JSON.stringify() 只能返回对象本身的可枚举属性，并序列化为JSON字符串</p>
-</blockquote>
-<ul>
-<li>Object.defineProperty()</li>
-</ul>
-<blockquote>
-<p>参数：<br>Object.defineProperty(object, propertyname, descriptor)<br>object 必需。 要在其上添加或修改属性的对象。 这可能是一个本机 JavaScript 对象（即用户定义的对象或内置对象）或 DOM 对象。<br>propertyname 必需。 一个包含属性名称的字符串。<br>descriptor 必需。 属性描述符。 它可以针对数据属性或访问器属性。<br>返回值：<br>已修改对象</p>
-</blockquote>
-<p>当对象不具有指定的属性名称时，向对象添加新属性。当对象已具有指定的属性名称时，修改现有属性的特性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">"newDataProperty"</span>, &#123;</span><br><span class="line">    value: <span class="number">101</span>,</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">obj.newDataProperty = <span class="number">102</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.newDataProperty)  <span class="comment">// 101 whiteable为false 只读，不能修改</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Object.getOwnPropertyNames</li>
-</ul>
-<p>由于obj的属性newDataProperty是不可枚举的，使用for…in不能找到newDataProperty属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item, obj[item])  <span class="comment">// 无输出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此时可以使用Object.getOwnPropertyNames来遍历</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = <span class="built_in">Object</span>.getOwnPropertyNames(obj)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; names.e]length; names++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(names, i, names[i])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ["newDataProperty"] 0 newDataProperty</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">"newAccessorProperty"</span>, &#123;</span><br><span class="line">    <span class="keyword">set</span>: function (x) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"in property set accessor"</span>);</span><br><span class="line">        <span class="keyword">this</span>.newaccpropvalue = x;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">get</span>: function () &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"in property get accessor"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.newaccpropvalue;</span><br><span class="line">    &#125;,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">obj.newAccessorProperty = <span class="number">30</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Property value: "</span> + obj.newAccessorProperty)</span><br><span class="line"><span class="comment">// in property set accessor</span></span><br><span class="line"><span class="comment">// in property get accessor</span></span><br><span class="line"><span class="comment">// Property value: 30</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改DOM上的属性</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(Element.prototype, <span class="string">"querySelector"</span>)</span><br><span class="line"><span class="comment">// &#123;value: ƒ, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(Element.prototype, <span class="string">"querySelector"</span>)</span><br><span class="line"></span><br><span class="line">descriptor.value = <span class="string">"query"</span></span><br><span class="line">descriptor.writable = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Element.prototype, <span class="string">"querySelector"</span>, descriptor)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">"div"</span>)</span><br><span class="line"></span><br><span class="line">elem.querySelector = <span class="string">"anotherQuery"</span>  <span class="comment">// whitable 为false 更改不生效</span></span><br><span class="line"><span class="built_in">console</span>.log(elem.querySelector)  <span class="comment">// query</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-multiple-diary2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/multiple-diary2/">日志内容【二】</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/26/multiple-diary2/" class="archive-article-date">
-  	<time datetime="2019-05-26T06:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-substr-和-substring"><a href="#1-substr-和-substring" class="headerlink" title="1. substr() 和 substring()"></a>1. substr() 和 substring()</h3><ul>
-<li>substr</li>
-</ul>
-<blockquote>
-<p>stringObject.substr(startIndex[, length])</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/05/26/multiple-diary2/#more">More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack-study" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/webpack-study/">webpack-study</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/23/webpack-study/" class="archive-article-date">
-  	<time datetime="2019-05-23T07:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> devMiddleware = <span class="built_in">require</span>(<span class="string">'webpack-dev-middleware'</span>)(compiler, &#123;</span><br><span class="line">    publicPath: webpackConfig.output.publicPath,</span><br><span class="line">    hot: <span class="literal">true</span>,</span><br><span class="line">    stats: &#123;</span><br><span class="line">        colors: <span class="literal">true</span>,</span><br><span class="line">        chunks: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// use express</span></span><br><span class="line">app.use(devMiddleware)</span><br><span class="line"></span><br><span class="line">app.listen(port, host, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Listening at '</span> + host + <span class="string">':'</span> + port + <span class="string">'\n'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="CommonsChunkPlugin"><a href="#CommonsChunkPlugin" class="headerlink" title="CommonsChunkPlugin"></a>CommonsChunkPlugin</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(‘webpack’)</span><br><span class="line"></span><br><span class="line">entry: &#123;</span><br><span class="line">    vendor: [<span class="string">'jquery'</span>, <span class="string">'lodash'</span>],</span><br><span class="line">    vuecore: <span class="string">'./vuecore.js'</span></span><br><span class="line">&#125;, </span><br><span class="line">plugins: [</span><br><span class="line">    <span class="comment">// new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),</span></span><br><span class="line">    <span class="comment">// new webpack.optimize.CommonsChunkPlugin(&#123;</span></span><br><span class="line">    <span class="comment">//     name: 'vuecore',</span></span><br><span class="line">    <span class="comment">//     filename: 'vuecore.js'</span></span><br><span class="line">    <span class="comment">// &#125;),</span></span><br><span class="line">    <span class="comment">// Error:  CommonsChunkPlugins: While running in normal mode its not allowed to use a non-entry chunk (vuecore)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// doing this instaed</span></span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">        names: [<span class="string">'vuecore'</span>,<span class="string">'vendor'</span>]</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'vendor'</span>, <span class="string">'vendor.bundle.js'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-multiple-diary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/multiple-diary/">日志内容【一】</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/multiple-diary/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:43:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-setTimeout中方法体添加引号与不添加引号的区别"><a href="#1-setTimeout中方法体添加引号与不添加引号的区别" class="headerlink" title="1. setTimeout中方法体添加引号与不添加引号的区别"></a>1. setTimeout中方法体添加引号与不添加引号的区别</h3><blockquote>
-<p><code>添加引号</code>的情况，调用的函数是<code>全局范围</code>的。<code>未添加引号</code>的情况，调用的是<code>局部范围</code>的。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/05/22/multiple-diary/#more">More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">dairy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-forEach-interrupt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/forEach-interrupt/">forEach遍历中断</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/forEach-interrupt/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:28:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    [<span class="number">22</span>, <span class="number">34</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">98</span>].forEach( <span class="function">(<span class="params">value, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (value === <span class="number">20</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'遇到20能够退出循环吗？'</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">'自定义异常提示语'</span>)</span><br><span class="line">            <span class="keyword">return</span>  <span class="comment">// return并不能中断循环，这里可写可不写</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="built_in">console</span>.log(<span class="string">'当前遍历值：'</span>, value)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err.message)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 22</span></span><br><span class="line"><span class="comment">// 34</span></span><br><span class="line"><span class="comment">// 遇到20能够退出循环吗？</span></span><br><span class="line"><span class="comment">// 自定义异常提示语</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-void-0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/void-0/">使用 void 0 代替 undefined</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/22/void-0/" class="archive-article-date">
-  	<time datetime="2019-05-22T09:02:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="What…"><a href="#What…" class="headerlink" title="What…"></a>What…</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="number">0</span> === <span class="literal">undefined</span>  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/05/22/void-0/#more">More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-this" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/this/">this + bind + call + apply</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/21/this/" class="archive-article-date">
-  	<time datetime="2019-05-21T07:05:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h3><blockquote>
-<p><code>this</code>的指向总结起来就是<code>this永远指向最后调用它的那个对象</code></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/05/21/this/#more">More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">this</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">作用域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-wxwork-link-unRirect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/wxwork-link-unRirect/">企业微信中超链接地址跳转</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/21/wxwork-link-unRirect/" class="archive-article-date">
-  	<time datetime="2019-05-21T03:04:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h4><p>在<code>ios(版本号未测试)企业微信(版本号未测试)</code>中，并且超链接<code>target</code>属性是<code>_blank</code>时，点击超链接不能正常跳转，当前页面自动刷新一次。<br>
-        
-          <a class="article-more-a" href="/2019/05/21/wxwork-link-unRirect/#more">More >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">企微</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">超链接</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-text-overflow-ellipsis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/01/text-overflow-ellipsis/">CSS文本超出容器宽度使用省略号代替（不考虑js方法）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/01/text-overflow-ellipsis/" class="archive-article-date">
-  	<time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="方法一-：常规方法（适用于webkit内核浏览器）"><a href="#方法一-：常规方法（适用于webkit内核浏览器）" class="headerlink" title="方法一 ：常规方法（适用于webkit内核浏览器）"></a>方法一 ：常规方法（适用于<code>webkit</code>内核浏览器）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container text-ellipsis"</span>&gt;</span>单行文字超出省略号单行文字超出省略号单行文字超出省略号单行文字超出省略号单行文字超出省略号单行文字超出省略号单行文字超出省略号单行文字超出省略号<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container text-ellipsis-multi"</span>&gt;</span>多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号多行文字超出省略号<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/04/01/text-overflow-ellipsis/#more">More >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ellipsis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">换行</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">省略号</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -897,7 +539,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Jnathan
+    		&copy; 2020 Jnathan
     	</div>
       	<div class="footer-right">
       		<!-- Powered By <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> -->
@@ -976,6 +618,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lazy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ellipsis</a>
               </li>
              
@@ -988,10 +650,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">this</a>
               </li>
              
@@ -1000,11 +658,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web-worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企微</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">超链接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">==</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">===</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">操作符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1059,7 +745,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;From Jnathan</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;共勉 祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;Jnathan</div>
   	  	
     	</section>
     

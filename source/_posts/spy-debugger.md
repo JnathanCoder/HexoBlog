@@ -34,6 +34,13 @@ tags:
 Android设置代理步骤：设置 - WLAN - 长按选中网络 - 修改网络 - 高级 - 代理设置 - 手动
 iOS设置代理步骤：设置 - 无线局域网 - 选中网络 - HTTP代理手动
 
+第四步：手机安装证书。
+
+`spy-debugger initCA` 会将证书放置到系统根目录node-mitmproxy文件夹。
+Mac	如：/users/yourName/node-mitmproxy
+Windows 如：C/users/yourName/node-mitmproxy
+将文件夹下的node-mitmproxy.ca.crt到手机上安装
+
 第五步：用手机浏览器访问你要调试的页面即可。
 
 ### 效果截图

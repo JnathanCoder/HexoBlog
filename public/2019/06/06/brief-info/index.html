@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://JnathanCoder.github.io">
   <title>知识点 | Jnathan Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)(); 以上两个文件进行合并压缩的时候就可能变为： 123var a = &apos;test&apos;(functi">
+  <meta name="description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="知识点">
 <meta property="og:url" content="https://JnathanCoder.github.io/2019/06/06/brief-info/index.html">
 <meta property="og:site_name" content="Jnathan Blog">
-<meta property="og:description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)(); 以上两个文件进行合并压缩的时候就可能变为： 123var a = &apos;test&apos;(functi">
+<meta property="og:description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)();">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-13T08:23:11.913Z">
+<meta property="og:updated_time" content="2019-07-29T09:33:04.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点">
-<meta name="twitter:description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)(); 以上两个文件进行合并压缩的时候就可能变为： 123var a = &apos;test&apos;(functi">
+<meta name="twitter:description" content="1. 一些js插件为什么以;开头因为js代码允许在结束的时候不添加;, 所以两个js文件在合并拼接的的时候可能出错。 12345678// a.js// 末尾没有添加;符号var a = &apos;test&apos;// b.js(function()&amp;#123;    // do something&amp;#125;)();">
   
     <link rel="alternative" href="/atom.xml" title="Jnathan Blog" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Jnathan</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">生人蛤蟆皮 熟人笑嘻嘻</p>
+		<p class="header-subtitle">重度懒癌患者</p>
 		
 
 		<nav class="header-menu">
@@ -107,7 +107,7 @@
 			  <h1 class="header-author js-header-author">Jnathan</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>生人蛤蟆皮 熟人笑嘻嘻<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>重度懒癌患者<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -166,6 +166,7 @@
       
         <h3 id="1-一些js插件为什么以-开头"><a href="#1-一些js插件为什么以-开头" class="headerlink" title="1. 一些js插件为什么以;开头"></a>1. 一些js插件为什么以<code>;</code>开头</h3><p>因为js代码允许在结束的时候不添加<code>;</code>, 所以两个js文件在合并拼接的的时候可能出错。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="comment">// 末尾没有添加;符号</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'test'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>以上两个文件进行合并压缩的时候就可能变为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'test'</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这样会报错： TypeError: 'test' is not a function</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-使用闭包定义私有属性"><a href="#2-使用闭包定义私有属性" class="headerlink" title="2. 使用闭包定义私有属性"></a>2. 使用闭包定义私有属性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Product</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        name = value;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Product();</span><br><span class="line">p.setName(<span class="string">"test"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.name); <span class="comment">// 输出undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(p.getName()); <span class="comment">// 输出test</span></span><br></pre></td></tr></table></figure>
@@ -178,7 +179,7 @@
 <li>propertyIsEnumerable</li>
 </ul>
 <blockquote>
-<p>Object.propertyIsEnumerable(prop)<br>prop 需要测试的属性名<br>返回值 用来表示指定的属性名是否可枚举的Boolean</p>
+<p>Object.propertyIsEnumerable(prop)<br>prop 需要测试的属性名<br>返回值 用来表示指定的属性名是否可枚举的Boolean<br>属性必须满足 自身属性 &amp;&amp; 枚举属性，才会返回true</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">obj.test = <span class="string">'Jnathan'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">23</span>, <span class="number">67</span>]</span><br><span class="line">obj.propertyIsEnumerable(<span class="string">'test'</span>)  <span class="comment">// true</span></span><br><span class="line">arr.propertyIsEnumerable(<span class="number">0</span>)  <span class="comment">// true</span></span><br><span class="line">arr.propertyIsEnumerable(<span class="number">1</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -193,18 +194,26 @@
 <ul>
 <li>枚举 for…in</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> Jnathan) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Jnathan.'</span> + item + <span class="string">' = '</span> + Jnathan[item])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Jnathan.name = Jnathan</span></span><br><span class="line"><span class="comment">// Jnathan.constructor = function Person() &#123;</span></span><br><span class="line"><span class="comment">//     this.name = 'Jnathan'</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// Jnathan.job = student</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> Jnathan) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Jnathan.'</span> + item + <span class="string">' = '</span> + Jnathan[item])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Jnathan.name = Jnathan</span></span><br><span class="line"><span class="comment">// Jnathan.constructor = function Person() &#123;</span></span><br><span class="line"><span class="comment">//     this.name = 'Jnathan'</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// Jnathan.job = student</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enumer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'我是对象本身就有的属性'</span></span><br><span class="line">&#125;</span><br><span class="line">enumer.prototype.b = <span class="string">'我是通过原型对象挂载的属性'</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="keyword">new</span> enumer()</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(fn, <span class="string">'c'</span>, &#123;</span><br><span class="line">    value: <span class="string">'我是通过Object.defineProperty方法添加的可枚举属性'</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">in</span> fn) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a</span></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="comment">// c</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>枚举 Object.keys()</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(Jnathan)</span><br><span class="line"><span class="comment">// ["name"]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(Jnathan)</span><br><span class="line"><span class="comment">// ["name"]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enumer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'我是对象本身就有的属性'</span></span><br><span class="line">&#125;</span><br><span class="line">enumer.prototype.b = <span class="string">'我是通过原型对象挂载的属性'</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="keyword">new</span> enumer()</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(fn, <span class="string">'c'</span>, &#123;</span><br><span class="line">    value: <span class="string">'我是通过Object.defineProperty方法添加的可枚举属性'</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(fn))</span><br><span class="line"><span class="comment">// ["a", "c"]</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>枚举 JSON.stringify()</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(Jnathan)</span><br><span class="line"><span class="comment">// "&#123;"name":"Jnathan"&#125;"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(Jnathan)</span><br><span class="line"><span class="comment">// "&#123;"name":"Jnathan"&#125;"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enumer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="string">'我是对象本身就有的属性'</span></span><br><span class="line">&#125;</span><br><span class="line">enumer.prototype.b = <span class="string">'我是通过原型对象挂载的属性'</span></span><br><span class="line"><span class="keyword">let</span> fn = <span class="keyword">new</span> enumer()</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(fn, <span class="string">'c'</span>, &#123;</span><br><span class="line">    value: <span class="string">'我是通过Object.defineProperty方法添加的可枚举属性'</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(fn))</span><br><span class="line"><span class="comment">// &#123;"a":"我是对象本身就有的属性","c":"我是通过Object.defineProperty方法添加的可枚举属性"&#125;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>根据现象有以下总结<br><!-- > for...in 能返回对象本身的可枚举和不可枚举属性、通过prototype或者definePrototype生成的属性   有问题。。。。 只能可枚举的--><br>Object.keys() 只能返回对象本身具有的可枚举属性<br>JSON.stringify() 只能返回对象本身的可枚举属性，并序列化为JSON字符串</p>
+<p>根据现象有以下总结<br>for…in 可以枚举对象本身具有的属性，通过Object.defineProperty()方法加的可枚举属性，或者通过原型对象绑定的可以枚举属性<br>Object.keys() 可以枚举对象本身的属性和通过Object.defineProperty()添加的可枚举属性<br>JSON.stringify() 可以枚举对象本身的属性和通过Object.defineProperty()添加的可枚举属性，并序列化为JSON字符串</p>
 </blockquote>
+<ul>
+<li>!== undefined</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="literal">undefined</span>, <span class="attr">z</span>: <span class="literal">null</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.x !== <span class="literal">undefined</span>)  <span class="comment">// true 属性存在</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.y !== <span class="literal">undefined</span>)  <span class="comment">// false 此时会出现歧义，不能准确判断属性是不存在还是属性值本身就为undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.z !== <span class="literal">undefined</span>)  <span class="comment">// true 属性存在</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.z != <span class="literal">undefined</span>)  <span class="comment">// false != 不能区分undefined和null，将两者同等对待</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.w !== <span class="literal">undefined</span>)  <span class="comment">// false 属性不存在</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.toString !== <span class="literal">undefined</span>)  <span class="comment">// true 存在toString函数属性。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>in 自身存在的属性或者继承的属性均返回true</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="literal">undefined</span>, <span class="attr">z</span>: <span class="literal">null</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"x"</span> <span class="keyword">in</span> obj)  <span class="comment">// true 属性存在</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"y"</span> <span class="keyword">in</span> obj)  <span class="comment">// true 属性存在</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"z"</span> <span class="keyword">in</span> obj)  <span class="comment">// true 属性存在</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"w"</span> <span class="keyword">in</span> obj)  <span class="comment">// false 属性不存在</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"toString"</span> <span class="keyword">in</span> obj)  <span class="comment">// true 属性存在</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>Object.defineProperty()</li>
 </ul>
@@ -292,6 +301,27 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="/assets/css/gitment.css">
+<!-- <script src="https://jjeejj.github.io/js/gitment.js"></script> -->
+<!-- <script src="/assets/css/gitment.js"></script> -->
+<!-- <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<script>
+    var gitment = new Gitment({
+        // id: "https://JnathanCoder.github.io/2019/06/06/brief-info/", // 有长度50的限制。。。
+        id: "知识点",
+        owner: 'JnathanCoder',
+        repo: 'JnathanCoder.github.io',
+        oauth: {
+            client_id: '97810445ba8d89806387',
+            client_secret: 'be160a535ac2a0e0342d6fd3bcff99fce6d88d25',
+        }
+    })
+    gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -301,7 +331,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Jnathan
+    		&copy; 2020 Jnathan
     	</div>
       	<div class="footer-right">
       		<!-- Powered By <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> -->
@@ -380,6 +410,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义指令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lazy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ellipsis</a>
               </li>
              
@@ -392,10 +442,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">this</a>
               </li>
              
@@ -404,11 +450,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web-worker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">企微</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">超链接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">==</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">===</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">操作符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,7 +537,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;From Jnathan</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">博客主要记录自己的学习点滴&lt;br&gt;内容来源于个人总结、他人博文以及网络资源&lt;br&gt;&lt;br&gt;共勉 祝好&lt;br&gt;&lt;br&gt;&amp;emsp;&amp;emsp;Jnathan</div>
   	  	
     	</section>
     

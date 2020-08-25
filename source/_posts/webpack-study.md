@@ -4,7 +4,7 @@ date: 2019-05-23 15:29:00
 tags: [webpack]
 ---
 
-### webpack-dev-server
+### webpack-dev-server-3
 
 ```js
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -27,6 +27,8 @@ app.listen(port, host, function (err) {
     console.log('Listening at ' + host + ':' + port + '\n')
 })
 ```
+
+<!-- More -->
 
 ### CommonsChunkPlugin
 
