@@ -1,5 +1,5 @@
 ---
-title: 日志内容【一】
+title: Diary【一】
 date: 2019-05-22 17:43:43
 toc: true
 tags: [dairy]

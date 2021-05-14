@@ -1,5 +1,5 @@
 ---
-title: 日志内容【二】
+title: Diary【二】
 date: 2019-05-26 14:08:31
 toc: true
 tags:

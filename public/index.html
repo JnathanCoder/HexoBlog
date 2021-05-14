@@ -142,30 +142,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-image-lazyload" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-diary" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/image-lazyload/">Vue自定义指令 image-lazyLoad</a>
+      <a class="article-title" href="/2021/04/08/diary/">diary</a>
     </h1>
   
 
         
-        <a href="/2020/08/13/image-lazyload/" class="archive-article-date">
-  	<time datetime="2020-08-13T09:37:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+        <a href="/2021/04/08/diary/" class="archive-article-date">
+  	<time datetime="2021-04-08T12:32:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>主要使用 <code>IntersectionObserver</code> 的特性实现，其还能实现譬如 <code>sticky</code> 、<code>上拉加载</code> 等功能。<br>这里只记录实现图片懒加载(图片开始出现在视口区域或者即将出现在视口区域，才开始请求图片资源，进行渲染)的自定义指令的实现代码。</p>
-        
-          <a class="article-more-a" href="/2020/08/13/image-lazyload/#more">More >></a>
-        
+        <h3 id="new的模拟实现"><a href="#new的模拟实现" class="headerlink" title="new的模拟实现"></a>new的模拟实现</h3><p>实现一下效果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用new</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(params)</span><br><span class="line"><span class="comment">// 使用自定义的objectFactory</span></span><br><span class="line"><span class="keyword">var</span> person = objectFactory(Person, params)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数没有返回值的情况</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.gender = gender</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.hobby = <span class="string">'singing'</span></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello, I am '</span> + <span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">objectFactory</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> Contructor = [].shift.call(<span class="built_in">arguments</span>)</span><br><span class="line">    obj.__proto__ = Contructor.prototype</span><br><span class="line">    Contructor.apply(obj, <span class="built_in">arguments</span>)</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = objectFactory(Person, <span class="string">'Wukong'</span>, <span class="number">500</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myObj)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 构造函数有返回值的情况</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -178,15 +177,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义指令</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">lazy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">diary</a>
         		</li>
       		
 		</ul>
@@ -222,32 +213,31 @@
 
 
   
-    <article id="post-web-worker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-css-border-animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/web-worker/">Web Worker 简介</a>
+      <a class="article-title" href="/2021/01/19/css-border-animation/">css-border-animation</a>
     </h1>
   
 
         
-        <a href="/2020/08/13/web-worker/" class="archive-article-date">
-  	<time datetime="2020-08-13T08:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+        <a href="/2021/01/19/css-border-animation/" class="archive-article-date">
+  	<time datetime="2021-01-19T02:11:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
-<p>JavaScript 语言采用的是单线程模型，也就是说，所有任务只能在一个线程上完成，一次只能做一件事。前面的任务没做完，后面的任务只能等着。随着电脑计算能力的增强，尤其是多核 CPU 的出现，单线程带来很大的不便，无法充分发挥计算机的计算能力。<br>Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</p>
-</blockquote>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> worker = <span class="keyword">new</span> Worker(jsUrl[, &#123; <span class="attr">name</span>: <span class="string">'yourWorkerName'</span> &#125;])</span><br></pre></td></tr></table></figure>
+        <div class="css-border1">Hover Me</div>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"css-border1"</span>&gt;</span>Hover Me<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/08/13/web-worker/#more">More >></a>
+          <a class="article-more-a" href="/2021/01/19/css-border-animation/#more">More >></a>
         
       
 
@@ -261,11 +251,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">worker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web-worker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">border</a>
         		</li>
       		
 		</ul>
@@ -301,29 +291,31 @@
 
 
   
-    <article id="post-abstract-and-strict-equality" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-css-custom-shape" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/29/abstract-and-strict-equality/">== 和 ===</a>
+      <a class="article-title" href="/2020/12/26/css-custom-shape/">css 常见图形</a>
     </h1>
   
 
         
-        <a href="/2020/04/29/abstract-and-strict-equality/" class="archive-article-date">
-  	<time datetime="2020-04-29T03:10:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+        <a href="/2020/12/26/css-custom-shape/" class="archive-article-date">
+  	<time datetime="2020-12-26T13:49:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先来几个例子，带着问题一起思考：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([<span class="number">10</span>] == <span class="number">10</span>);                <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'10'</span> == <span class="number">10</span>);                <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == <span class="number">0</span>);                   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> == <span class="number">1</span>);                 <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == <span class="literal">false</span>);               <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(![] == <span class="literal">false</span>);              <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == ![]);                 <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">''</span> == <span class="number">0</span>);                   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">''</span> == <span class="literal">false</span>);               <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">false</span>);             <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">true</span>);              <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(!<span class="literal">null</span> == <span class="literal">true</span>);             <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == <span class="literal">undefined</span>);         <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-三角形"><a href="#1-三角形" class="headerlink" title="1. 三角形"></a>1. 三角形</h3><h4 id="1-1-上三角"><a href="#1-1-上三角" class="headerlink" title="1.1 上三角"></a>1.1 上三角</h4><div class="up-triangle"></div>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"up-triangle"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/04/29/abstract-and-strict-equality/#more">More >></a>
+          <a class="article-more-a" href="/2020/12/26/css-custom-shape/#more">More >></a>
         
       
 
@@ -337,19 +329,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">==</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">===</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">操作符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转换</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		
 		</ul>
@@ -385,31 +365,30 @@
 
 
   
-    <article id="post-data-type-transfer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-preload-prefetch-async-defer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/19/data-type-transfer/">数据类型转换</a>
+      <a class="article-title" href="/2020/09/09/preload-prefetch-async-defer/">前端优化之Pre相关术语</a>
     </h1>
   
 
         
-        <a href="/2020/04/19/data-type-transfer/" class="archive-article-date">
-  	<time datetime="2020-04-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+        <a href="/2020/09/09/preload-prefetch-async-defer/" class="archive-article-date">
+  	<time datetime="2020-09-09T06:00:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基本数据类型有 <code>Number</code>、 <code>String</code>、 <code>Boolean</code>、 <code>Null</code>、 <code>Undefined</code>、<code>Object</code>，ES6新增了<code>Symbol</code> 类型。</p>
-<h3 id="1-原始值转布尔"><a href="#1-原始值转布尔" class="headerlink" title="1. 原始值转布尔"></a>1. 原始值转布尔</h3><p>在Javascript中。只有6种值可以被转换成false，其余均为true：<br><code>false</code>、<code>undefined</code>、<code>null</code>、<code>NaN</code>、<code>0</code>、<code>&#39;&#39;</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">false</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">0</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">''</span>))  <span class="comment">// false</span></span><br><span class="line"><span class="comment">// Boolean不传任何参数时 返回false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>())  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+        <h3 id="DNS-prefetch"><a href="#DNS-prefetch" class="headerlink" title="DNS prefetch"></a>DNS prefetch</h3><p>用于告知浏览器预先获取指定的域名的DNS，以便在使用时可以减少DNS查找。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"//the-domain-to-be-prefetched.com"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/04/19/data-type-transfer/#more">More >></a>
+          <a class="article-more-a" href="/2020/09/09/preload-prefetch-async-defer/#more">More >></a>
         
       
 
@@ -423,11 +402,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">类型转换</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端优化</a>
         		</li>
       		
 		</ul>
@@ -463,30 +438,31 @@
 
 
   
-    <article id="post-spy-debugger" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-defineproperty-proxy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/spy-debugger/">移动端真机调试 spy-debugger</a>
+      <a class="article-title" href="/2020/08/31/defineproperty-proxy/">defineproperty-proxy</a>
     </h1>
   
 
         
-        <a href="/2019/07/15/spy-debugger/" class="archive-article-date">
-  	<time datetime="2019-07-15T08:53:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+        <a href="/2020/08/31/defineproperty-proxy/" class="archive-article-date">
+  	<time datetime="2020-08-31T08:25:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="关于spy-debugger"><a href="#关于spy-debugger" class="headerlink" title="关于spy-debugger"></a>关于spy-debugger</h3><p>一站式页面调试、抓包工具。远程调试任何手机浏览器页面，任何手机移动端<code>webview</code>（如：微信，HybridApp等）。支持H<code>TTP/HTTPS</code>，无需USB连接设备。</p>
-<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p>1、页面调试＋抓包<br>2、操作简单，无需USB连接设备<br>3、支持HTTPS。<br>4、spy-debugger内部集成了weinre、node-mitmproxy、AnyProxy。<br>5、自动忽略原生App发起的https请求，只拦截webview发起的https请求。对使用了SSL pinning技术的原生App不造成任何影响。<br>6、可以配合其它代理工具一起使用(默认使用AnyProxy) (设置外部代理)</p>
+        <p>在一篇 <a href="https://juejin.im/post/6861725116389130254" target="_blank" rel="noopener">掘金文章</a> 中看到这样一道题目，大概是以下的需求。</p>
+<p>补全Observe函数，使得执行 <code>proxyObj.name = &#39;大大&#39;</code> 时，打印 <code>属性[name]的值被修改为[大大]</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Observe</span>(<span class="params">obj, callback</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// TO DO</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> oldObj = &#123;</span><br><span class="line">    name: <span class="string">'小小'</span>,</span><br><span class="line">    uid: <span class="number">108</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> proxyObj = Observe(oldObj, (key, value) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`属性[<span class="subst">$&#123;key&#125;</span>]的值被修改为[<span class="subst">$&#123;value&#125;</span>]`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/07/15/spy-debugger/#more">More >></a>
+          <a class="article-more-a" href="/2020/08/31/defineproperty-proxy/#more">More >></a>
         
       
 
@@ -495,6 +471,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">defineProperty</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">proxy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -527,7 +518,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -539,7 +530,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Jnathan
+    		&copy; 2021 Jnathan
     	</div>
       	<div class="footer-right">
       		<!-- Powered By <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> -->
@@ -618,11 +609,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">border</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">diary</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,6 +638,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">lazy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,6 +698,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">defineProperty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">proxy</a>
               </li>
              
               <li class="article-tag-list-item">
